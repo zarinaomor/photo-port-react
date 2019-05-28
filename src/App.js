@@ -15,9 +15,9 @@ class App extends Component {
       const registerCall = await fetch('http://localhost:8000/users/', {
         method: 'POST',
         body: JSON.stringify(data),
-        credentials: 'include',
         headers: {
-          'Content-Type': 'application/json'
+          'Content-Type': 'application/json',
+          'Access-Control-Allow-Credentials': 'true'
         }
       })
       const response = await registerCall.json()
@@ -31,8 +31,13 @@ class App extends Component {
   getPhotos = async () => {
     
     try {
-      const response = await fetch('http://localhost:8000/api/v1/photos', {
-        credentials: 'include'
+      const response = await fetch('http://localhost:8000/photos', {
+        credentials: 'include',
+        method: "GET",
+        headers: {
+          'Content-Type': 'application/json',
+          'Access-Control-Allow-Origin': '*'
+        }
       });
 
       if(response.ok){
