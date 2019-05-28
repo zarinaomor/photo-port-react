@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Register from './components/register/register'
 import './App.css';
+import Home from "./components/Home/Home"
 
 
 class App extends Component {
@@ -11,7 +12,7 @@ class App extends Component {
 
   handleRegister = async (data) => {
     try {
-      const registerCall = await fetch('http://localhost:8000/users/registration', {
+      const registerCall = await fetch('http://localhost:8000/users/', {
         method: 'POST',
         body: JSON.stringify(data),
         credentials: 'include',
@@ -47,6 +48,7 @@ class App extends Component {
     return (
       <div className="App">
         <Register handleRegister={this.handleRegister} />
+        <Home />
       </div>
     )
   }
