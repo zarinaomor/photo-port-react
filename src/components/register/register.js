@@ -1,5 +1,6 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 import Button from 'react-bootstrap/Button'
+import {withRouter} from "react-router";
 
 class Register extends Component {
 
@@ -37,9 +38,11 @@ class Register extends Component {
 
             const parsedResponse = await loginResponse.json();
             console.log(parsedResponse)
-            if(parsedResponse.id){
-                this.props.loginUser(parsedResponse);
-                this.props.history.push(`/profile/${parsedResponse.id}/edit`);
+            if(parsedResponse.success='sucess'){
+                // this.props.loginUser(parsedResponse);
+                this.props.history.push(`/profile`);
+                this.props.onHide()
+
             }
 
 
@@ -74,4 +77,4 @@ class Register extends Component {
     }
 }
 
-export default Register;
+export default withRouter(Register);

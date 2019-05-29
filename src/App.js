@@ -4,8 +4,8 @@ import { Route, Switch } from 'react-router-dom'
 import './App.css';
 import Login from './components/Login/Login'
 import Explore from './components/Explore/Explore'
-import Register from './components/register/register'
-import Navbar from './components/Navbar/Navbar'
+import Register from './components/Register/register'
+import Navbar from './components/navbar/navbar'
 import Popup from './components/Modal/modal'
 import * as routes from './constants/routes'
 import Home from './components/Home/Home'
@@ -16,7 +16,15 @@ import Home from './components/Home/Home'
 class App extends Component{
   state = {
     show: false,
-    modalID: 0
+    modalID: 0,
+    logged: false,
+    userID: null
+  }
+  checkedLogged= (userID)=>{
+    this.setState({
+      logged:true,
+      userID:userID
+    })
   }
 
   handleClose = ()=> {
