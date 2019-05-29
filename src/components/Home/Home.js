@@ -1,9 +1,5 @@
 import React from 'react';
-import Carousel from 'react-bootstrap/Carousel'
-import Container from 'react-bootstrap/Container'
-import Row from 'react-bootstrap/Row'
-import Col from 'react-bootstrap/Col'
-import Button from 'react-bootstrap/Button'
+import {Carousel, Container, Row, Col, Button} from 'react-bootstrap'
 
 const Home = () => {
     return (
@@ -20,6 +16,11 @@ const Home = () => {
                     src="https://picsum.photos/id/851/800/600"
                     alt="First slide"
                     />
+                <Col xs={6} md={4}>
+            <h6>Global network for photographers</h6>
+            <span><h1>Upload, Share, Discover Photos</h1></span>
+            <span><Button variant="outline-info" size="lg">Sign Up</Button></span>
+            </Col>
                 </Carousel.Item>
                 <Carousel.Item>
                     <img
@@ -36,11 +37,6 @@ const Home = () => {
                     />
                 </Carousel.Item>
             </Carousel>
-            </Col>
-            <Col xs={6} md={4}>
-            <h6>Global network for photographers</h6>
-            <span><h1>Upload, Share, Discover Photos</h1></span>
-            <span><Button variant="outline-info" size="lg">Sign Up</Button></span>
             </Col>
             </Row>
         </Container>
