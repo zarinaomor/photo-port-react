@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Modal, Button } from 'react-bootstrap'
 import Login from '../Login/Login'
-import Register from '../register/register'
+import Register from '../Register/register'
 
 
 class Popup extends Component{
