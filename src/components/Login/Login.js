@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Button from 'react-bootstrap/Button'
 
 
 
@@ -67,7 +68,8 @@ class Login extends Component {
                         <input text="password" name="password" placeholder="password" onChange={this.handleChange} value={this.state.password}/>
                     </label>
                     <br />
-                    <button type="submit">Login</button>
+                    <Button type="submit" onSubmit={this.handleSubmit}>Login</Button>
+
                 </form> 
             </div>
         )
