@@ -16,8 +16,4 @@
 // }
 
 
-<<<<<<< HEAD
 // export default Login;
-=======
-export default Login;
->>>>>>> master
