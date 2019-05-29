@@ -9,6 +9,8 @@ import Navbar from './components/Navbar/Navbar'
 import Popup from './components/Modal/modal'
 import * as routes from './constants/routes'
 import Home from './components/Home/Home'
+import EditUserInfo from './components/EditUserInfo/EditUserInfo'
+import Logout from './components/Login/Login'
 
 
 
@@ -35,6 +37,8 @@ class App extends Component{
             <Route exact path={routes.REGISTER} render={()  =><Register /> } />
             <Route exact path={routes.LOGIN} render={()  =><Login /> } />
             <Route exact path={routes.EXPLORE} render={()  =><Explore />} />
+            <Route exact path={routes.EDITUSERINFO} render={()  =><EditUserInfo />} />
+            <Route exact path={routes.LOGOUT} render={()  =><Logout />} />
           </Switch>
         < Popup  handleClose= {this.handleClose} modalID = {this.state.modalID} show = {this.state.show} />
       </React.Fragment>

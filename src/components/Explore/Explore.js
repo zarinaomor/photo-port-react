@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import 'bootstrap/dist/css/bootstrap.css';
-import {Container, Row, Col, Card, CardDeck} from 'react-bootstrap'
+import {Container, Card, CardDeck} from 'react-bootstrap'
 
 
 class Explore extends Component {
