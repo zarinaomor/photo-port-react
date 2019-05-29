@@ -4,9 +4,9 @@ import { Route, Switch } from 'react-router-dom'
 import './App.css';
 import Login from './components/Login/Login'
 import Explore from './components/Explore/Explore'
-import Register from './components/Register/register'
-import Navbar from './components/navbar/navbar'
-import Popup from './components/Modal/modal'
+import Register from './components/Register/Register'
+import Navbar from './components/Navbar/Navbar'
+import Popup from './components/Modal/Modal'
 import * as routes from './constants/routes'
 import Home from './components/Home/Home'
 
