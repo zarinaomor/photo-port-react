@@ -9,7 +9,7 @@ const NavBar = () =>
         <Navbar bg="light" expand="lg">
         <Nav className="justify-content-center">
             <Nav.Item>
-                <Nav.Link href="/home">Home</Nav.Link>
+                <Nav.Link href="/">Home</Nav.Link>
             </Nav.Item>
             <Nav.Item>
                 <Nav.Link href="/explore">Explore</Nav.Link>

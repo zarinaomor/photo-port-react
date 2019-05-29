@@ -17,7 +17,7 @@ import * as routes from './constants/routes';
 class App extends Component{
   render(){
     return (
-      <div className="App">
+      <React.Fragment>
         <Navbar />
 
           <Switch>
@@ -27,7 +27,7 @@ class App extends Component{
             <Route exact path={routes.EXPLORE} render={()  =><Explore />} />
           </Switch>
 
-      </div>
+      </React.Fragment>
     )};
 }
 
