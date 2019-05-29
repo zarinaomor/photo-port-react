@@ -3,12 +3,23 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+<<<<<<< HEAD
     "@material-ui/core": "^4.0.1",
+=======
+    "bootstrap": "^4.3.1",
+>>>>>>> master
     "react": "^16.8.6",
+    "react-bootstrap": "^1.0.0-beta.8",
     "react-dom": "^16.8.6",
+<<<<<<< HEAD
     "react-router-dom": "^5.0.0",
     "react-scripts": "3.0.1",
     "typeface-roboto": "0.0.54"
+=======
+    "react-router": "^5.0.0",
+    "react-router-dom": "^5.0.0",
+    "react-scripts": "3.0.1"
+>>>>>>> master
   },
   "scripts": {
     "start": "react-scripts start",

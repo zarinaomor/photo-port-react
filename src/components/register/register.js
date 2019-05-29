@@ -14,7 +14,7 @@ class Register extends Component {
             [e.target.name]: e.target.value
         })
     }
-    handleSubmit = async (e) => {
+    handleSubmit = async(e) => {
         e.preventDefault()
         
         try {
