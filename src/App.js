@@ -15,27 +15,28 @@ import Home from './components/Home/Home'
 
 class App extends Component{
   state = {
-    show: true
+    show: false,
+    modalID: 0
   }
 
   handleClose = ()=> {
     this.setState({ show: false });
   }
 
-  handleShow = ()=> {
-    this.setState({ show: true });
+  handleShow = (num)=> {
+    this.setState({ show: true ,modalID: num});
   }
   render(){
     return (
       <React.Fragment>
         <Navbar handleShow = {this.handleShow}/>
           <Switch>
-              <Route exact path={routes.HOME} render={() =><Home /> } />
+            <Route exact path={routes.HOME} render={() =><Home /> } />
             <Route exact path={routes.REGISTER} render={()  =><Register /> } />
             <Route exact path={routes.LOGIN} render={()  =><Login /> } />
             <Route exact path={routes.EXPLORE} render={()  =><Explore />} />
           </Switch>
-        < Popup  handleClose= {this.handleClose} show = {this.state.show} />
+        < Popup  handleClose= {this.handleClose} modalID = {this.state.modalID} show = {this.state.show} />
       </React.Fragment>
     )};
 }

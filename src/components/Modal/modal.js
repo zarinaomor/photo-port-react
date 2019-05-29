@@ -1,10 +1,12 @@
 import React, { Component } from 'react'
 import { Modal, Button } from 'react-bootstrap'
+import Login from '../Login/Login'
+import Register from '../Register/register'
 
 
 class Popup extends Component{
     render() {
-        const {show,handleClose} = this.props
+        const {show,handleClose,modalID} = this.props
         return (
           <>
             
@@ -13,15 +15,8 @@ class Popup extends Component{
               <Modal.Header closeButton>
                 <Modal.Title>Modal heading</Modal.Title>
               </Modal.Header>
-              <Modal.Body>Woohoo, you're reading this text in a modal!</Modal.Body>
-              <Modal.Footer>
-                <Button variant="secondary" onClick={this.handleClose}>
-                  Close
-                </Button>
-                <Button variant="primary" onClick={this.handleClose}>
-                  Save Changes
-                </Button>
-              </Modal.Footer>
+                    <Modal.Body>{modalID===1?<Login />:<Register />}</Modal.Body>
+              
             </Modal>
           </>
         );
