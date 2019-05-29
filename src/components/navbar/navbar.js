@@ -4,8 +4,8 @@ import Nav from 'react-bootstrap/Nav'
 import Navbar from 'react-bootstrap/Navbar'
 import 'bootstrap/dist/css/bootstrap.css';
 
-const NavBar = () =>
-
+const NavBar = ({handleShow}) =>
+        
         <Navbar bg="dark" variant="dark" expand="lg">
         <Nav className="justify-content-center">
             <Nav.Item>
@@ -15,7 +15,7 @@ const NavBar = () =>
                 <Nav.Link href="/explore">Explore</Nav.Link>
             </Nav.Item>
             <Nav.Item>
-                <Nav.Link href="/login">Login</Nav.Link>
+                <Nav.Link href=""onClick={handleShow}>Login</Nav.Link>
             </Nav.Item>
             <Nav.Item>
                 <Nav.Link href="/register">Register</Nav.Link>

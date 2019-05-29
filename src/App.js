@@ -6,6 +6,7 @@ import Login from './components/Login/Login'
 import Explore from './components/Explore/Explore'
 import Register from './components/Register/register'
 import Navbar from './components/Navbar/navbar'
+import Popup from './components/Modal/modal'
 import * as routes from './constants/routes'
 import Home from './components/Home/Home'
 
@@ -13,17 +14,28 @@ import Home from './components/Home/Home'
 
 
 class App extends Component{
+  state = {
+    show: true
+  }
+
+  handleClose = ()=> {
+    this.setState({ show: false });
+  }
+
+  handleShow = ()=> {
+    this.setState({ show: true });
+  }
   render(){
     return (
       <React.Fragment>
-        <Navbar />
+        <Navbar handleShow = {this.handleShow}/>
           <Switch>
               <Route exact path={routes.HOME} render={() =><Home /> } />
             <Route exact path={routes.REGISTER} render={()  =><Register /> } />
             <Route exact path={routes.LOGIN} render={()  =><Login /> } />
             <Route exact path={routes.EXPLORE} render={()  =><Explore />} />
           </Switch>
-
+        < Popup  handleClose= {this.handleClose} show = {this.state.show} />
       </React.Fragment>
     )};
 }

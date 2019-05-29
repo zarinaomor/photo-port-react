@@ -7,6 +7,7 @@ class Explore extends Component {
             <main>
                 <div>
                     <p>What's Trending?</p>
+                    
                 </div>
             </main>
         )
