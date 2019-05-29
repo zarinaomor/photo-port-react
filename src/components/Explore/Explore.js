@@ -5,7 +5,10 @@ class Explore extends Component {
     render(){
         return (
             <main>
-                <h1>Just some stuff</h1>
+                <div>
+                    <p>What's Trending?</p>
+                    
+                </div>
             </main>
         )
     }

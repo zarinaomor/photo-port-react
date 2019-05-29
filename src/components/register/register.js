@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Button from 'react-bootstrap/Button'
 
 class Register extends Component {
 
@@ -67,7 +68,7 @@ class Register extends Component {
                     Verify password:
                     <input type='text' name='verify_password' placeholder='confirm password' onChange={this.handleChange} value={this.state.verify_password}/><br/>
                 </label>
-                <button type='submit'>Register</button>
+                <Button type='submit'>Register</Button>
             </form>
         )
     }
