@@ -1,7 +1,13 @@
 import React, { Component } from 'react';
-import Register from './components/register/register'
-import './App.css';
+import {Switch,Route} from 'react-router-dom';
 
+
+import Register from './components/register/register';
+import Navbar from './components/navbar/navbar';
+import './App.css';
+import 'bootstrap/dist/css/bootstrap.css';
+
+import * as routes from './constants/routes';
 
 class App extends Component {
 
@@ -51,11 +57,16 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Register handleRegister={this.handleRegister} />
+        <Navbar />
+        <Switch>
+          <Route exact path={routes.REGISTER} render={()  => <Register handleRegister={this.handleRegister} />}/>
+
+        </Switch>
       </div>
     )
-  }
+  
 
-  }
+  };
+}
 
 export default App;
