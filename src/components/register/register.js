@@ -16,11 +16,18 @@ class Register extends Component {
     }
     handleSubmit = async(e) => {
         e.preventDefault()
+
+        const newUser = {
+            name: this.state.name,
+            email: this.state.email,
+            password: this.state.password,
+            verify_password: this.state.verify_password
+          };
         
         try {
             const loginResponse = await fetch('/', {
                 method: 'POST',
-                body: JSON.stringify(this.state),
+                body: JSON.stringify(newUser),
                 headers: {
                     'Content-Type': 'application/json',
                     'Access-Control-Allow-Origin': 'http://localhost:8000'
@@ -29,8 +36,9 @@ class Register extends Component {
 
             const parsedResponse = await loginResponse.json();
             console.log(parsedResponse)
-            if(parsedResponse.success){
-                this.props.history.push('/photos')
+            if(parsedResponse.id){
+                this.props.loginUser(parsedResponse);
+                this.props.history.push(`/profile/${parsedResponse.id}/edit`);
             }
 
 
