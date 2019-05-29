@@ -6,7 +6,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 
 const NavBar = () =>
 
-        <Navbar bg="light" expand="lg">
+        <Navbar bg="dark" variant="dark" expand="lg">
         <Nav className="justify-content-center">
             <Nav.Item>
                 <Nav.Link href="/">Home</Nav.Link>

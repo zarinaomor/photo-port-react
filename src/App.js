@@ -7,6 +7,7 @@ import Explore from './components/Explore/Explore'
 import Register from './components/register/register'
 import Navbar from './components/navbar/navbar'
 import * as routes from './constants/routes'
+import Home from './components/Home/Home'
 
 
 
