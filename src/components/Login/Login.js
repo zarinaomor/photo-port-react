@@ -26,7 +26,7 @@ class Login extends Component {
         try {
             const loginResponse = await fetch('http://localhost:8000/users/login', {
                 method: 'POST',
-                credentials: 'include',
+                // credentials: 'include',
                 body: JSON.stringify(loggedUser),
                 headers: {
                     'Content-Type': 'application/json',
