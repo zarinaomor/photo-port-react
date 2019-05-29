@@ -1,19 +1,13 @@
-// import React, { Component } from 'react';
-// import { Route, Switch } from 'react-router-dom';
-// import './App.css';
-// import Login from './components/Login/Login';
-// import Register from './components/Register/Register';
-
-// const App = () => {
-//     return (
-//         <main>
-//             {/* <Switch>
-//                 <Route exact path="/login" component={ Login } />
-//                 <Route exact path="/register" component={ Register } />
-//             </Switch> */}
-//         </main>
-//     )
-// }
+import React, { Component } from 'react';
 
 
-// export default Login;
+const Login = () => {
+    return (
+        <main>
+            <h1>Just some stuff</h1>
+        </main>
+    )
+}
+
+
+export default Login;

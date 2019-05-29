@@ -9,13 +9,13 @@ const NavBar = () =>
         <Navbar bg="light" expand="lg">
         <Nav className="justify-content-center">
             <Nav.Item>
-                <Nav.Link href="">Home</Nav.Link>
+                <Nav.Link href="/home">Home</Nav.Link>
             </Nav.Item>
             <Nav.Item>
-                <Nav.Link href="">Explore</Nav.Link>
+                <Nav.Link href="/explore">Explore</Nav.Link>
             </Nav.Item>
             <Nav.Item>
-                <Nav.Link href="">Login/Register</Nav.Link>
+                <Nav.Link href="/register">Login/Register</Nav.Link>
             </Nav.Item>
         </Nav>
         </Navbar>
