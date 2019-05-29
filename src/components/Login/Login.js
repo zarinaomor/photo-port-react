@@ -30,7 +30,7 @@ class Login extends Component {
                 body: JSON.stringify(loggedUser),
                 headers: {
                     'Content-Type': 'application/json',
-                    'Access-Control-Allow-Origin': 'http://localhost:8000'
+                    'Access-Control-Allow-Origin': '*'
                 }
             })
 
@@ -38,7 +38,8 @@ class Login extends Component {
             console.log(parsedResponse)
             if(parsedResponse.id){
                 this.props.loginUser(parsedResponse);
-                this.props.history.push(`/profile/${parsedResponse.id}`);
+                // this.props.history.push(`/profile/${parsedResponse.id}`);
+                this.props.history.push(`/explore`);
             } else {
                 this.setState({
                     authMessage: parsedResponse
@@ -55,7 +56,7 @@ class Login extends Component {
     render() {
         return(
             <div className="login">
-                <form>
+                <form onSubmit={this.handleSubmit}>
                     <label>
                         Username
                         <input type="text" name="username" placeholder="username" onChange={this.handleChange} value={this.state.username}/>
@@ -66,7 +67,7 @@ class Login extends Component {
                         <input text="password" name="password" placeholder="password" onChange={this.handleChange} value={this.state.password}/>
                     </label>
                     <br />
-                    <button type="submit" onSubmit={this.handleSubmit}>Login</button>
+                    <button type="submit">Login</button>
                 </form> 
             </div>
         )
