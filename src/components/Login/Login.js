@@ -24,13 +24,13 @@ class Login extends Component {
         }
 
         try {
-            const loginResponse = await fetch('http://localhost:8000/users/', {
+            const loginResponse = await fetch('http://localhost:8000/users/login', {
                 method: 'POST',
                 credentials: 'include',
                 body: JSON.stringify(loggedUser),
                 headers: {
                     'Content-Type': 'application/json',
-                    'Access-Control-Allow-Origin': '*'
+                    'Access-Control-Allow-Origin': 'http://localhost:8000'
                 }
             })
 
@@ -76,6 +76,7 @@ class Login extends Component {
 
 
 export default Login;
+
 
 
 
