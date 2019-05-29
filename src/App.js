@@ -1,45 +1,19 @@
 import React, { Component } from 'react';
-import Register from './components/register/register'
-import Login from './components/Login/Login'
+import { Route, Switch } from 'react-router-dom';
 import './App.css';
+import Login from './components/Login/Login';
+import Register from './components/Register/Register';
 
-
-class App extends Component {
-
- 
-
-  
-    
-  getPhotos = async () => {
-    
-    try {
-      const response = await fetch('http://localhost:8000/photos', {
-        credentials: 'include',
-        method: "GET",
-        headers: {
-          'Content-Type': 'application/json',
-          'Access-Control-Allow-Origin': '*'
-        }
-      });
-
-      if(response.ok){
-        const responseParsed = await response.json();
-        console.log(responseParsed)
-      }
-
-    } catch(err){
-      console.log(err)
-    }
-  }
-  render() {
+const App = () => {
     return (
-      <div className="App">
-        <Register handleRegister={this.handleRegister} />
-        <Login />
-      </div>
+        <main>
+            <Switch>
+                <Route exact path="/login" component={ Login } />
+                <Route exact path="/register" component={ Register } />
+            </Switch>
+        </main>
     )
-  }
+}
 
-  }
 
-export default App;
+export default Login;
