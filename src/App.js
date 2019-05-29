@@ -1,15 +1,12 @@
-import React, { Component } from 'react';
-import ReactDOM from 'react-dom'   
-import { Route, Switch } from 'react-router-dom';
+import React, { Component } from 'react'
+// import ReactDOM from 'react-dom'   
+import { Route, Switch } from 'react-router-dom'
 import './App.css';
-
-import Login from './components/Login/Login';
+import Login from './components/Login/Login'
 import Explore from './components/Explore/Explore'
 import Register from './components/register/register'
 import Navbar from './components/navbar/navbar'
-import Home from './components/Home/Home'
-
-import * as routes from './constants/routes';
+import * as routes from './constants/routes'
 
 
 
@@ -19,7 +16,6 @@ class App extends Component{
     return (
       <React.Fragment>
         <Navbar />
-
           <Switch>
               <Route exact path={routes.HOME} render={() =><Home /> } />
             <Route exact path={routes.REGISTER} render={()  =><Register /> } />
@@ -30,5 +26,6 @@ class App extends Component{
       </React.Fragment>
     )};
 }
+
 
 export default App;
