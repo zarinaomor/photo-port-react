@@ -1,8 +1,10 @@
 import React ,{ Component} from 'react'
 import { Link } from 'react-router-dom'
 import Nav from 'react-bootstrap/Nav'
+import { LinkContainer } from "react-router-bootstrap";
 import Navbar from 'react-bootstrap/Navbar'
 
+import './navbar.css'
 import 'bootstrap/dist/css/bootstrap.css';
 
 class NavBar extends Component{
@@ -10,22 +12,44 @@ class NavBar extends Component{
     render(){
         const {handleShow} = this.props 
         return (
-        <Navbar bg="dark" variant="dark" expand="lg">
-        <Nav className="justify-content-center">
+        <Navbar bg="dark" variant="dark" expand="lg" className="navBar">
+        <Nav>
+            <Nav.Link>
+                <Link to='/home'>
                 <Nav.Item>
-                    <Nav.Link >Home</Nav.Link>
+                    Home
                 </Nav.Item>
-            
+                </Link>
+            </Nav.Link>
+
+            <Nav.Link>
+            <Link to='/explore'>
                 <Nav.Item>
-                    <Link to='/explore'><Nav.Link>Explore</Nav.Link></Link>
+                    Explore
                 </Nav.Item>
-            <Nav.Item>
-                <Nav.Link href="" onClick={()=>{handleShow(1)}} >Login</Nav.Link>
-            </Nav.Item>
-            <Nav.Item>
-                <Nav.Link href="" onClick={()=>{handleShow(2)}}>Register</Nav.Link>
-            </Nav.Item>
+            </Link>
+            </Nav.Link>
         </Nav>
+
+        <Nav >
+            <Nav.Link>
+                <Link>
+                    <Nav.Item onClick={()=>{handleShow(1)}}>
+                        Login
+                    </Nav.Item>
+                </Link>
+            </Nav.Link>
+
+            <Nav.Link>
+                <Link>
+                    <Nav.Item onClick={()=>{handleShow(2)}} >
+                        Register
+                    </Nav.Item>
+                </Link>
+
+            </Nav.Link>
+        </Nav>
+
         </Navbar>
     )}
 }

@@ -16,7 +16,15 @@ import Home from './components/Home/Home'
 class App extends Component{
   state = {
     show: false,
-    modalID: 0
+    modalID: 0,
+    logged: false,
+    userID: null
+  }
+  checkedLogged= (userID)=>{
+    this.setState({
+      logged:true,
+      userID:userID
+    })
   }
 
   handleClose = ()=> {
