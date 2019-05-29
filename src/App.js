@@ -1,31 +1,14 @@
 import React, { Component } from 'react';
 import Register from './components/register/register'
+import Login from './components/Login/Login'
 import './App.css';
 
 
 class App extends Component {
 
-  componentDidMount (){
-    this.getPhotos()
-  }
+ 
 
-  handleRegister = async (data) => {
-    try {
-      const registerCall = await fetch('http://localhost:8000/users/', {
-        method: 'POST',
-        body: JSON.stringify(data),
-        headers: {
-          'Content-Type': 'application/json',
-          'Access-Control-Allow-Credentials': 'true'
-        }
-      })
-      const response = await registerCall.json()
-      console.log(response, 'from the flask server on localhost : 8000')
-
-    } catch(err){
-      console.log(err)
-    }
-  }
+  
     
   getPhotos = async () => {
     
@@ -52,6 +35,7 @@ class App extends Component {
     return (
       <div className="App">
         <Register handleRegister={this.handleRegister} />
+        <Login />
       </div>
     )
   }
