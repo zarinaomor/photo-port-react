@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 import Button from 'react-bootstrap/Button'
+import {Redirect,Route ,withRouter} from "react-router";
+
+
 
 
 
@@ -36,11 +39,12 @@ class Login extends Component {
             })
 
             const parsedResponse = await loginResponse.json();
-            console.log(parsedResponse)
-            if(parsedResponse.id){
-                this.props.loginUser(parsedResponse);
+            console.log(parsedResponse.message)
+            if(parsedResponse.message = "success"){
+                // this.props.loginUser(parsedResponse);
                 // this.props.history.push(`/profile/${parsedResponse.id}`);
-                this.props.history.push(`/explore`);
+                this.props.onHide()
+                return this.props.history.push('/profile')
             } else {
                 this.setState({
                     authMessage: parsedResponse
@@ -77,7 +81,7 @@ class Login extends Component {
 }
 
 
-export default Login;
+export default withRouter(Login);
 
 
 

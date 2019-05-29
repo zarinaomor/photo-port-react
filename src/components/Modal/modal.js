@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Modal } from 'react-bootstrap'
 import Login from '../Login/Login'
-import Register from '../register/register'
+import Register from '../Register/register'
 
 
 class Popup extends Component{
@@ -15,7 +15,7 @@ class Popup extends Component{
               <Modal.Header closeButton>
                 <Modal.Title>Modal heading</Modal.Title>
               </Modal.Header>
-                    <Modal.Body>{modalID===1?<Login />:<Register />}</Modal.Body>
+                    <Modal.Body>{modalID===1?<Login onHide={handleClose} />:<Register onHide={handleClose}/>}</Modal.Body>
               
             </Modal>
           </>
