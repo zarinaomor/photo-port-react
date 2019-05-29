@@ -16,11 +16,18 @@ class Register extends Component {
     }
     handleSubmit = async(e) => {
         e.preventDefault()
+
+        const newUser = {
+            name: this.state.name,
+            email: this.state.email,
+            password: this.state.password,
+            verify_password: this.state.verify_password
+          };
         
         try {
-            const loginResponse = await fetch('/', {
+            const loginResponse = await fetch('http://localhost:8000/users/', {
                 method: 'POST',
-                body: JSON.stringify(this.state),
+                body: JSON.stringify(newUser),
                 headers: {
                     'Content-Type': 'application/json',
                     'Access-Control-Allow-Origin': 'http://localhost:8000'
@@ -29,8 +36,9 @@ class Register extends Component {
 
             const parsedResponse = await loginResponse.json();
             console.log(parsedResponse)
-            if(parsedResponse.success){
-                this.props.history.push('/photos')
+            if(parsedResponse.id){
+                this.props.loginUser(parsedResponse);
+                this.props.history.push(`/profile/${parsedResponse.id}/edit`);
             }
 
 
@@ -45,19 +53,19 @@ class Register extends Component {
             <form onSubmit={this.handleSubmit}>
                 <label>
                     Username:
-                    <input type='text' name='username' onChange={this.handleChange}/><br/>
+                    <input type='text' name='username' placeholder='username' onChange={this.handleChange} value={this.state.username}/><br/>
                 </label>
                 <label>
                     Email:
-                    <input type='email' name='email' onChange={this.handleChange}/><br/>
+                    <input type='email' name='email' placeholder='email' onChange={this.handleChange} value={this.state.email}/><br/>
                 </label>
                 <label>
                     Password:
-                    <input type='text' name='password' onChange={this.handleChange}/><br/>
+                    <input type='text' name='password' placeholder='password' onChange={this.handleChange} value={this.state.password}/><br/>
                 </label>
                 <label>
                     Verify password:
-                    <input type='text' name='verify_password' onChange={this.handleChange}/><br/>
+                    <input type='text' name='verify_password' placeholder='confirm password' onChange={this.handleChange} value={this.state.password}/><br/>
                 </label>
                 <button type='submit'>Register</button>
             </form>
