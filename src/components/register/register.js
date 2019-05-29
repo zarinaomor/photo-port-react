@@ -25,7 +25,7 @@ class Register extends Component {
           };
         
         try {
-            const loginResponse = await fetch('/', {
+            const loginResponse = await fetch('http://localhost:8000/users/', {
                 method: 'POST',
                 body: JSON.stringify(newUser),
                 headers: {
@@ -53,19 +53,19 @@ class Register extends Component {
             <form onSubmit={this.handleSubmit}>
                 <label>
                     Username:
-                    <input type='text' name='username' onChange={this.handleChange}/><br/>
+                    <input type='text' name='username' placeholder='username' onChange={this.handleChange} value={this.state.username}/><br/>
                 </label>
                 <label>
                     Email:
-                    <input type='email' name='email' onChange={this.handleChange}/><br/>
+                    <input type='email' name='email' placeholder='email' onChange={this.handleChange} value={this.state.email}/><br/>
                 </label>
                 <label>
                     Password:
-                    <input type='text' name='password' onChange={this.handleChange}/><br/>
+                    <input type='text' name='password' placeholder='password' onChange={this.handleChange} value={this.state.password}/><br/>
                 </label>
                 <label>
                     Verify password:
-                    <input type='text' name='verify_password' onChange={this.handleChange}/><br/>
+                    <input type='text' name='verify_password' placeholder='confirm password' onChange={this.handleChange} value={this.state.password}/><br/>
                 </label>
                 <button type='submit'>Register</button>
             </form>
