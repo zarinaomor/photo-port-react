@@ -7,6 +7,7 @@ import Explore from './components/Explore/Explore'
 import Register from './components/Register/register'
 import Navbar from './components/Navbar/navbar'
 import * as routes from './constants/routes'
+import Home from './components/Home/Home'
 
 
 
@@ -14,15 +15,16 @@ import * as routes from './constants/routes'
 class App extends Component{
   render(){
     return (
-      <div className="App">
+      <React.Fragment>
         <Navbar />
           <Switch>
+              <Route exact path={routes.HOME} render={() =><Home /> } />
             <Route exact path={routes.REGISTER} render={()  =><Register /> } />
             <Route exact path={routes.LOGIN} render={()  =><Login /> } />
             <Route exact path={routes.EXPLORE} render={()  =><Explore />} />
           </Switch>
 
-      </div>
+      </React.Fragment>
     )};
 }
 

@@ -18,7 +18,7 @@ class Register extends Component {
         e.preventDefault()
 
         const newUser = {
-            name: this.state.name,
+            username: this.state.username,
             email: this.state.email,
             password: this.state.password,
             verify_password: this.state.verify_password
@@ -65,7 +65,7 @@ class Register extends Component {
                 </label>
                 <label>
                     Verify password:
-                    <input type='text' name='verify_password' placeholder='confirm password' onChange={this.handleChange} value={this.state.password}/><br/>
+                    <input type='text' name='verify_password' placeholder='confirm password' onChange={this.handleChange} value={this.state.verify_password}/><br/>
                 </label>
                 <button type='submit'>Register</button>
             </form>
