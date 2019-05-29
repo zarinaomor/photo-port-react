@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Register from './components/register/register'
 import './App.css';
 import Home from "./components/Home/Home"
+import 'typeface-roboto';
 
 
 class App extends Component {
@@ -17,7 +18,7 @@ class App extends Component {
         body: JSON.stringify(data),
         headers: {
           'Content-Type': 'application/json',
-          'Access-Control-Allow-Credentials': 'true'
+          'Access-Control-Allow-Credentials': '*'
         }
       })
       const response = await registerCall.json()
@@ -32,7 +33,7 @@ class App extends Component {
     
     try {
       const response = await fetch('http://localhost:8000/photos', {
-        credentials: 'include',
+        // credentials: 'include',
         method: "GET",
         headers: {
           'Content-Type': 'application/json',

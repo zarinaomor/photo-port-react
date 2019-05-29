@@ -1,10 +1,13 @@
 import React from 'react';
+import CssBaseline from '@material-ui/core/CssBaseline';
+import Typography from '@material-ui/core/Typography';
+import Container from '@material-ui/core/Container';
 
 const Home = () => {
     return (
-        <div>
-            <div><h1>INTRO</h1></div>
-        </div>
+        <Container maxWidth="sm">
+            <div><h1>Newest photo uploads</h1></div>
+        </Container>
     )
 }
 
