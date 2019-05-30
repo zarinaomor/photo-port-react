@@ -7,6 +7,7 @@ import Explore from './components/Explore/Explore'
 import Register from './components/Register/register'
 import Navbar from './components/navbar/navbar'
 import Popup from './components/Modal/modal'
+import Profile from './components/Profile/Profile'
 import * as routes from './constants/routes'
 import Home from './components/Home/Home'
 
@@ -39,12 +40,13 @@ class App extends Component{
       <React.Fragment>
         <Navbar handleShow = {this.handleShow}/>
           <Switch>
-            <Route exact path={routes.HOME} render={() =><Home /> } />
+            <Route exact path={routes.HOME} render={() =><Home creator={this.state.userID}/> } />
             <Route exact path={routes.REGISTER} render={()  =><Register /> } />
             <Route exact path={routes.LOGIN} render={()  =><Login /> } />
             <Route exact path={routes.EXPLORE} render={()  =><Explore />} />
+            <Route exact path={`${routes.PROFILE}/:id`} render={()  =><Profile userID={this.state.userID} logged={this.state.logged}/>} />
           </Switch>
-        < Popup  handleClose= {this.handleClose} modalID = {this.state.modalID} show = {this.state.show} />
+        < Popup  handleClose= {this.handleClose} checkedLogged={this.checkedLogged} modalID = {this.state.modalID} show = {this.state.show} />
       </React.Fragment>
     )};
 }

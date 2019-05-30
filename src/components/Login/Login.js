@@ -39,12 +39,13 @@ class Login extends Component {
             })
 
             const parsedResponse = await loginResponse.json();
-            console.log(parsedResponse.message)
+            console.log(parsedResponse.user.id)
             if(parsedResponse.message = "success"){
                 // this.props.loginUser(parsedResponse);
                 // this.props.history.push(`/profile/${parsedResponse.id}`);
+                this.props.login(parsedResponse.user.id)
                 this.props.onHide()
-                return this.props.history.push('/profile')
+                return this.props.history.push(`/profile/${parsedResponse.user.id}`)
             } else {
                 this.setState({
                     authMessage: parsedResponse
