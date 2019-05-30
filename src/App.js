@@ -10,6 +10,8 @@ import Popup from './components/Modal/modal'
 import Profile from './components/Profile/Profile'
 import * as routes from './constants/routes'
 import Home from './components/Home/Home'
+import EditUserInfo from './components/EditUserInfo/EditUserInfo'
+import Logout from './components/Login/Login'
 
 
 
@@ -44,9 +46,11 @@ class App extends Component{
             <Route exact path={routes.REGISTER} render={()  =><Register /> } />
             <Route exact path={routes.LOGIN} render={()  =><Login /> } />
             <Route exact path={routes.EXPLORE} render={()  =><Explore />} />
-            <Route exact path={`${routes.PROFILE}/:id`} render={()  =><Profile userID={this.state.userID} logged={this.state.logged}/>} />
+            <Route exact path={`${routes.PROFILE}/:id`} render={()  =><Profile userID={this.state.userID} handleShow = {this.handleShow} logged={this.state.logged}/>} />
+            <Route exact path={routes.EDITUSERINFO} render={()  =><EditUserInfo />} />
+            <Route exact path={routes.LOGOUT} render={()  =><Logout />} />
           </Switch>
-        < Popup  handleClose= {this.handleClose} checkedLogged={this.checkedLogged} modalID = {this.state.modalID} show = {this.state.show} />
+        < Popup  handleClose= {this.handleClose} checkedLogged={this.checkedLogged} modalID = {this.state.modalID} show = {this.state.show} userID={this.state.userID} />
       </React.Fragment>
     )};
 }

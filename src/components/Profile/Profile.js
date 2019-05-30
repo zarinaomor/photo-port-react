@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import AddPhoto from '../AddPhoto/AddPhoto';
 import { withRouter } from 'react-router-dom'
+import Button from 'react-bootstrap/Button'
 
 
 class Profile extends Component {
@@ -34,12 +35,16 @@ class Profile extends Component {
     }
 
     render(){
+        const {handleShow} = this.props 
         return(
             <div>
                 <h1> Hey, {this.state.userObj.username}</h1>
                 {this.props.logged
-                ?   <div>
-                        <AddPhoto userID={this.state.userID}/>    
+                ?   
+                <div>
+                    <Button onClick={()=>{handleShow(3)}}>AddPhoto</Button>
+                    <Button onClick={()=>{handleShow(4)}}>Edit Profile</Button>
+   
                     </div> 
                 :<p></p>}
             </div>
