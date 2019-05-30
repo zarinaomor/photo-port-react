@@ -16,7 +16,7 @@ class Popup extends Component{
               <Modal.Header closeButton>
                 <Modal.Title>Modal heading</Modal.Title>
               </Modal.Header>
-                    <Modal.Body>{modalID===1?<Login onHide={handleClose} />:<Register onHide={handleClose}/>}</Modal.Body>
+                    <Modal.Body>{modalID===1?<Login onHide={handleClose} logged={this.props.logged}/>:<Register onHide={handleClose}/>}</Modal.Body>
               
             </Modal>
           </>

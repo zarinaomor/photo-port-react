@@ -25,7 +25,16 @@ class App extends Component{
   checkedLogged= (userID)=>{
     this.setState({
       logged:true,
-      userID:userID
+      userID: userID
+    })
+  }
+
+
+  doLogout = () => {
+    console.log('logout')
+    this.setState({
+        currentUser: null,
+        logged: false
     })
   }
 
@@ -39,16 +48,16 @@ class App extends Component{
   render(){
     return (
       <React.Fragment>
-        <Navbar handleShow = {this.handleShow}/>
+        <Navbar handleShow = {this.handleShow} doLogout={this.doLogout} isLogged={this.state.logged}/>
           <Switch>
             <Route exact path={routes.HOME} render={() =><Home /> } />
             <Route exact path={routes.REGISTER} render={()  =><Register /> } />
-            <Route exact path={routes.LOGIN} render={()  =><Login /> } />
+            <Route exact path={routes.LOGIN} render={()  =><Login/> } />
             <Route exact path={routes.EXPLORE} render={()  =><Explore />} />
             <Route exact path={routes.EDITUSERINFO} render={()  =><EditUserInfo />} />
-            <Route exact path={routes.LOGOUT} render={()  =><Logout />} />
+            <Route exact path={routes.LOGOUT} render={()  =><Logout logStat={this.state.logged}/>} />
           </Switch>
-        < Popup  handleClose= {this.handleClose} modalID = {this.state.modalID} show = {this.state.show} />
+        < Popup  handleClose= {this.handleClose} modalID = {this.state.modalID} show = {this.state.show} logged={this.checkedLogged}/>
       </React.Fragment>
     )};
 }
