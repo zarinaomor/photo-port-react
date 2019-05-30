@@ -3,9 +3,9 @@ import { Link } from 'react-router-dom'
 import Nav from 'react-bootstrap/Nav'
 // import { LinkContainer } from "react-router-bootstrap";
 import Navbar from 'react-bootstrap/Navbar'
-
 import './navbar.css'
 import 'bootstrap/dist/css/bootstrap.css';
+
 
 class NavBar extends Component{
     
@@ -44,6 +44,14 @@ class NavBar extends Component{
                 <Link>
                     <Nav.Item onClick={()=>{handleShow(2)}} >
                         Register
+                    </Nav.Item>
+                </Link>
+
+            </Nav.Link>
+            <Nav.Link>
+                <Link>
+                    <Nav.Item onClick={()=>{handleShow(3)}} >
+                        Edit Profile
                     </Nav.Item>
                 </Link>
 

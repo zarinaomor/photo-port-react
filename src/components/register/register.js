@@ -38,8 +38,8 @@ class Register extends Component {
 
             const parsedResponse = await loginResponse.json();
             console.log(parsedResponse)
-            if(parsedResponse.success='sucess'){
-                // this.props.loginUser(parsedResponse);
+            if(parsedResponse.success === 'sucess'){
+                this.props.loginUser(parsedResponse);
                 this.props.history.push(`/profile`);
                 this.props.onHide()
 
