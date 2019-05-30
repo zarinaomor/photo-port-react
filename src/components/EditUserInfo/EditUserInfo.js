@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import Button from 'react-bootstrap/Button'
+import {Redirect, Route, withRouter} from "react-router"
 
 
 class EditUserInfo extends Component {
@@ -27,13 +29,22 @@ class EditUserInfo extends Component {
 
     render() {
         return(
-            <div>
+            <div className="edit">
                 <form onSubmit={this.doHandleSubmit}>
                     <h2>Edit Your Profile</h2>
-                    <input type="text" name="username" defaultValue={this.state.username} onChange={this.doHandleInput} placeholder="username" /><br/>
-                    <input type="text" name="email" defaultValue={this.state.email} onChange={this.doHandleInput} placeholder="email" /><br/>
-                    <input type="text" name="password" defaultValue={this.state.password} onChange={this.doHandleInput} placeholder="password" /><br/>
-                    <button type="submit">Submit</button>
+                    <label>
+                        <input type="text" name="username" defaultValue={this.state.username} onChange={this.doHandleInput} placeholder="username" />
+                    </label>
+                    <br/>
+                    <label>
+                        <input type="text" name="email" defaultValue={this.state.email} onChange={this.doHandleInput} placeholder="email" />    
+                    </label>
+                    <br/>
+                    <label>
+                        <input type="text" name="password" defaultValue={this.state.password} onChange={this.doHandleInput} placeholder="password" />
+                    </label>
+                    <br/>
+                    <Button type="submit" onSubmit={this.handleSubmit}>Edit Profile</Button>
                 </form>
             </div>
         )
@@ -41,4 +52,4 @@ class EditUserInfo extends Component {
 }
 
 
-export default EditUserInfo
+export default withRouter(EditUserInfo);

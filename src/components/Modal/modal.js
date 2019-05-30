@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { Modal } from 'react-bootstrap'
 import Login from '../Login/Login'
 import Register from '../register/register'
+// import EditUserInfo from '../EditUserInfo/EditUserInfo'
 
 
 class Popup extends Component{
