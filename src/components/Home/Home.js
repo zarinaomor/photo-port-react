@@ -3,58 +3,80 @@ import {Carousel, Container, Row, Col, Button} from 'react-bootstrap'
 import styled from 'styled-components'
 import AddPhoto from '../AddPhoto/AddPhoto';
 
-const BackgroundContainer = styled(Carousel.Item) `
-    background-image: url("../images/bkg1.svg");
+const BackgroundCarousel = styled(Carousel) `
+    width: 80%;
+    height: 10%;
 `
+const BackgroundRow = styled(Row) `
+    height: 100vh;
+    width: 100wh;
+    background-image: url("../images/bkg1.svg");
 
+`
+const CarouselItem = styled(Carousel.Item) `
+    margin: 20px;
+
+`
 
 const Home = () => {
     return (
         <Container>
-            <Row>
-            <Col className="justify-content-center"><h1>Newest photo uploads</h1></Col>
-            </Row>
-            <Row>
-            <Col>
             <Carousel>
-                <BackgroundContainer>
+                <CarouselItem>
+                <BackgroundRow>
+            </BackgroundRow>
                     <img
                     className="d-block w-100"
-                    src="https://picsum.photos/id/851/800/600"
+                    src="https://picsum.photos/id/851/600/400"
                     alt="First slide"
                     />
-                <Col>
-            <h6>Global network for photographers</h6>
+                    <Carousel.Caption>
+                    <h6>Global network for photographers</h6>
             <h1>Upload Photos</h1>
             <Button variant="outline-info" size="lg">Sign Up</Button>
-            </Col>
-                </BackgroundContainer>
+                </Carousel.Caption>
+                </CarouselItem>
                 <Carousel.Item>
                     <img
                     className="d-block w-100"
-                    src="https://picsum.photos/id/1025/800/600"
+                    src="https://picsum.photos/id/1025/600/400"
                     alt="First slide"
                     />
-                     <Col>
-                    <h6>Global network for photographers</h6>
+                                        <Carousel.Caption>
+                                        <h6>Global network for photographers</h6>
                     <h1>Share Photos</h1><Button variant="outline-info" size="lg">Sign Up</Button>
-                    </Col>
+                </Carousel.Caption>
                 </Carousel.Item>
                 <Carousel.Item>
                     <img
                     className="d-block w-100"
-                    src="https://picsum.photos/id/883/800/600"
+                    src="https://picsum.photos/id/883/600/400"
                     alt="First slide"
                     />
-                     <Col>
+
+                        <Carousel.Caption>
                     <h6>Global network for photographers</h6>
                     <h1>Discover Photos</h1>
                     <Button variant="outline-info" size="lg">Sign Up</Button>
-                    </Col>
+                </Carousel.Caption>
+
+                </Carousel.Item>
+                <Carousel.Item>
+                    <img
+                    className="d-block w-100"
+                    src="https://picsum.photos/id/872/600/400"
+                    alt="First slide"
+                    />
+
+                    <Carousel.Caption>
+                    <h6>Global network for photographers</h6>
+                    <h1>Discover Photos</h1>
+                    <Button variant="outline-info" size="lg">Sign Up</Button>
+                </Carousel.Caption>
+
+
                 </Carousel.Item>
             </Carousel>
-            </Col>
-            </Row>
             < AddPhoto />
         </Container>
     )
