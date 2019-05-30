@@ -1,19 +1,12 @@
-// import React, { Component } from 'react'
+import React, { Component } from 'react'
 
 
-// const Logout = () => {
-    
-//     doSetCurrentUser = user =>
-//         this.setState({
-//             currentUser: user
-//         })
-//     doLogout = () => {
-//         this.setState({
-//             currentUser: null
-//         })
-//         this.props.history.push(routes.LOGIN)
-//     }
- 
-// }
+const Logout = (props) => {
+    return (
+        <button onClick={() => props.doLog0ut()}>Logout</button>
+    )
+     
+}
 
-// export default Logout
+export default Logout
+

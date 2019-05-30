@@ -19,7 +19,7 @@ class Popup extends Component{
               </Modal.Header>
                     <Modal.Body>
                         {modalID===1
-                        ?<Login login={checkedLogged} onHide={handleClose} />:
+                        ?<Login logged={checkedLogged} onHide={handleClose} />:
                         (modalID === 2 
                         ? <Register onHide={handleClose}/>:
                         (modalID === 3
