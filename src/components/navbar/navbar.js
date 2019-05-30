@@ -56,9 +56,19 @@ class NavBar extends Component{
                 </Link>
 
             </Nav.Link>
+            <Nav.Link>
+                <Link>
+                    <Nav.Item onClick={()=>{handleShow(4)}} >
+                        Logout
+                    </Nav.Item>
+                </Link>
+
+            </Nav.Link>
         </Nav>
 
         </Navbar>
     )}
 }
 export default NavBar
+
+// {this.props.loggedUser._id ? <li><NavLink exact to="#" onClick={this.props.logoutUser}>
