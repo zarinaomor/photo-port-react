@@ -16,7 +16,7 @@ class NavBar extends Component{
             <Navbar bg="dark" variant="dark" expand="lg" className="navBar">
                 <Nav>
                     <Nav.Link>
-                        <Link to='/home'>
+                        <Link to='/'>
                         <Nav.Item>
                             Home
                         </Nav.Item>

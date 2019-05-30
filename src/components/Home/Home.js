@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {Component} from 'react';
 import {Carousel, Container, Row, Col, Button} from 'react-bootstrap'
 import styled from 'styled-components'
 import AddPhoto from '../AddPhoto/AddPhoto';
@@ -18,7 +18,10 @@ const CarouselItem = styled(Carousel.Item) `
 
 `
 
-const Home = () => {
+class Home extends Component {
+    render(){
+    const {creator} = this.props
+    console.log(creator)
     return (
         <Container>
             <Carousel>
@@ -79,7 +82,7 @@ const Home = () => {
             </Carousel>
             < AddPhoto />
         </Container>
-    )
+    )};
 }
 
 export default Home

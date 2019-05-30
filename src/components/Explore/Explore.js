@@ -13,7 +13,12 @@ const RowMargin = styled(Row) `
 class Explore extends Component {
 
   getPhotos = async () => {
-    
+    try {
+
+    } catch (err) {
+      console.log(err)
+      return err
+    }
   }
 
     render(){

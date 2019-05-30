@@ -19,14 +19,14 @@ class AddPhoto extends Component {
 
     handleSubmit = async(e) => {
         e.preventDefault()
-
+        console.log(this.props.userID)
         const newPhoto = {
             title: this.state.title,
             url: this.state.url,
             description: this.state.description,
             camera: this.state.camera,
-            category: this.state.category
-            // created_by: current users id
+            category: this.state.category,
+            created_by: this.props.userID
         };
         
         try {
@@ -39,7 +39,6 @@ class AddPhoto extends Component {
                 }
             })
             const parsedResponse = await photoResponse.json();
-            console.log(parsedResponse)
         } catch(err){
             console.log(err);
             return err
