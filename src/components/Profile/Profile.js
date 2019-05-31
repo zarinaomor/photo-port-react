@@ -96,7 +96,7 @@ class Profile extends Component {
                     </Card.Text>
                     </Card.Body>
                     <Card.Footer>
-                        <Button onClick='this.props.delete'>Delete</Button>
+                        <Button onClick={this.props.delete}>Delete</Button>
                     </Card.Footer>
 
                 </Card>
