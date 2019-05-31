@@ -70,14 +70,14 @@ class Login extends Component {
                     <br />
                     <label>
                         Password
-                        <input text="password" name="password" placeholder="password" onChange={this.handleChange} value={this.state.password}/>
+                        <input type="password" name="password" placeholder="password" onChange={this.handleChange} value={this.state.password}/>
                     </label>
                     <br />
                     <Button type="submit" onSubmit={this.handleSubmit}>Login</Button>
 
                 </form> 
             </div>
-        )
+        )   
     }
 }
 
