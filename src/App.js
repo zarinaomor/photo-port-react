@@ -33,11 +33,7 @@ class App extends Component{
 
   doLogout = async () => {
     console.log('logout')
-    await fetch('http://localhost:8000/users/logout', {
-      method:"GET",
-            headers:{
-                "Content-Type":'application/json'
-    })
+    await fetch('http://localhost:8000/users/logout')
     this.setState({
         currentUser: null,
         logged: false
